@@ -1,16 +1,14 @@
-<header class="navbar navbar-fixed-top navbar-dark">
-    <div class="container">
-    <%= link_to "MEET", id: "logo" %>
-    <nav>
-        <ul class="nav navbar-nav navbar-right">
-            <% if true %>
-                <li><%= link_to "Create Posts" %></li>
-                <li><%= link_to "Logout" %></li>
+<header class="">
+    <nav class="navbar navbar-dark bg-dark">
+        <%= link_to "MEET", id: "logo", :class=>"navbar-brand" %>
+        <ul class="nav ml-5 mt-2 mt-lg-0 float-right">
+            <% if user_signed_in? %>
+                <li class = "nav-item ml-5"><%= link_to "Create Posts", :class=>"nav-link"  %></li>
+                <li class = "nav-item ml-5"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, :class=>"nav-link" %></li>
             <% else %>
-                <li><%= link_to "Register" %></li>
-                <li><%= link_to "Log in" %></li>
-            <% end %>
+                <li class = "nav-item ml-5"><%= link_to "Register", :class=>"nav-link" %></li>
+                <li class = "nav-item ml-5"><%= link_to "Log in", :class=>"nav-link" %></li>
+            <% end %>    
         </ul>
     </nav>
-    </div>
 </header>
