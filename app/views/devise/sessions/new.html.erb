@@ -2,13 +2,10 @@
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <div><%= f.label "Phone Number or Email" %><br/>
+    <%= f.text_field :signin, :autofocus => true %></div>
   </div>
-  <div class="field">
-    <div><%= f.label :phone %><br />
-    <%= f.text_field :phone, :autofocus => true %><div>
-  </div>
+
   <div class="field">
     <%= f.label :password %><br />
     <%= f.password_field :password, autocomplete: "current-password" %>
